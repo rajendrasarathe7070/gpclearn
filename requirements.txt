@@ -1,0 +1,69 @@
+# Django Framework
+Django==6.0.3
+python==3.12.10
+
+# Database (SQLite3 - built-in, but including for clarity)
+# sqlite3 is included with Python
+
+# Python Imaging Library (for image handling)
+Pillow
+
+# Environment variables management
+python-dotenv
+
+# WSGI HTTP Server
+gunicorn
+
+# Static Files Serving in Production
+whitenoise
+
+# REST API Framework (if needed)
+djangorestframework
+
+# CORS Headers (if API requests from frontend)
+django-cors-headers
+
+# Admin customization
+django-admin-interface
+
+# Form handling & validation
+django-crispy-forms
+
+# Pagination & filtering
+django-filter
+
+# API Documentation
+drf-spectacular
+
+# Security
+django-environ
+
+# Testing
+pytest
+pytest-django
+
+# Code quality
+black
+flake8
+isort
+
+# Debugging
+django-debug-toolbar
+
+# Task Queue (optional - for background tasks)
+celery
+
+# Email Backend
+django-anymail
+
+# Caching
+django-redis
+redis
+# API Rate Limiting
+djangorestframework-simplejwt
+
+# File Upload
+django-storages
+
+# Logging
+python-json-logger
