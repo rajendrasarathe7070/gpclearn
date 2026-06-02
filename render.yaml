@@ -1,4 +1,5 @@
 services:
+
   - type: web
     name: eLearn-for-study
     env: python
@@ -14,5 +15,5 @@ services:
         value: '.onrender.com'
       - key: PYTHONUNBUFFERED
         value: '1'
-      - key: PYTHON_VERSION
-        value: '3.12.3'
+      # Python runtime enforce karne ke liye runtime.txt ko source of truth rakha hai.
+
