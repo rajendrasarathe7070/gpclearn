@@ -17,6 +17,9 @@
   <link id="theme-stylesheet" rel="stylesheet" href="{% static 'css/style.css' %}?v=2">
 </head>
 <body>
+  <script src="{% static 'js/csrf.js' %}"></script>
+  <script src="{% static 'js/data.js' %}"></script>
+  <script src="{% static 'js/swipe.js' %}"></script>
   <div id="particles" class="particles"></div>
   <div id="scroll-progress" class="scroll-progress"></div>
 
@@ -122,9 +125,7 @@
 
   <div id="toast-wrap" class="toast-wrap"></div>
 
-  <script src="{% static 'js/csrf.js' %}"></script>
-  <script src="{% static 'js/data.js' %}"></script>
-  <script src="{% static 'js/swipe.js' %}"></script>
+
   <script>
       let pendingId = null;
       let currentUserData = {};

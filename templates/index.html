@@ -16,6 +16,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>E-learn | GPC Harsud – smart study hub</title>
   <link id="theme-stylesheet" rel="stylesheet" href="{% static 'css/style.css' %}">
+  
+<!-- Font Awesome (icon library) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
 </head>
 <body>
   <div id="particles" class="particles"></div>
@@ -29,9 +33,9 @@
         <span class="brand-name"><sup>GPC Harsud</sup></span>
       </a>
       <div class="nav-links">
-        <a href="{% url 'index' %}" class="nav-link active">🏠 Home</a>
-        <a href="{% url 'notes' %}" class="nav-link">📝 Notes</a>
-        <a href="{% url 'syllabus' %}" class="nav-link">📗 Syllabus</a>
+        <a href="" class="nav-link active">🏠 Home</a>
+        <a href="" class="nav-link">📝 Notes</a>
+        <a href="" class="nav-link">📗 Syllabus</a>
         <a href="{% url 'books' %}" class="nav-link">📖 Books</a>
         <a href="{% url 'pyq' %}" class="nav-link">📄 PYQ</a>
         <a href="{% url 'doubts' %}" class="nav-link">❓ Doubts</a>
@@ -54,6 +58,7 @@
     {% endif %}
 
       <button id="theme-toggle-btn" class="btn btn-ghost btn-sm" onclick="toggleTheme()" style="font-size:1.2rem; border:none; background:none; cursor:pointer; padding:0.5rem;">☀️</button>
+<!-- new update index home top bar navigation 
 <style>
     /* ---------- menu bar container ---------- */
     .menuBar1 {
@@ -181,28 +186,36 @@
     }
 </style>
 
-<!-- ====== HTML STRUCTURE ====== -->
+<!-- ====== HTML STRUCTURE ====== 
 <nav class="menuBar1" role="navigation" aria-label="Main navigation">
 
-   
-    <!-- Hamburger -->
+    
     <button class="hamburger1" id="hamburger1" aria-label="Toggle menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
     </button>
 
-    <!-- Nav Links -->
+    
     <ul class="navLinks1" id="navLinks1">
-        <li><a href="#" class="active1"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
-        <li><a href="#"><i class="fas fa-cogs"></i> Services</a></li>
-        <li><a href="#"><i class="fas fa-blog"></i> Blog</a></li>
-        <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="{% url 'index' %}" class="active1"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="{% url 'notes' %}"><i class="fas fa-book"></i> Notes </a></li>
+        <li><a href="{% url 'syllabus' %}"><i class="fas fa-file"></i> Syllabus</a></li>
+        <li><a href="{% url 'books' %}"><i class="fas fa-book-open"></i> Books</a></li>
+        <li><a href="{% url 'pyq' %}"><i class="fas fa-file-alt"></i> PYQ</a></li>
+        <a href="{% url 'doubts' %}" class="nav-mobile-icon btn btn-ghost btn-sm">❓</a>
+    
+      {% if user.is_authenticated %}
+      <a href="{% url 'profile' %}" class="nav-mobile-icon btn btn-ghost btn-sm">👤</a>
+      {%else %}
+      <a href="{% url 'login' %}" class="nav-mobile-icon btn btn-ghost btn-sm">🔐</a>
+    {% endif %}
+
+      <button id="theme-toggle-btn" class="btn btn-ghost btn-sm" onclick="toggleTheme()" style="font-size:1.2rem; border:none; background:none; cursor:pointer; padding:0.5rem;">☀️</button>
     </ul>
 </nav>
 
-<!-- ====== JAVASCRIPT ====== -->
+
 <script>
     (function() {
         const hamburger = document.getElementById('hamburger1');
@@ -234,10 +247,7 @@
             });
         });
     })();
-</script>
-
-<!-- Font Awesome (icon library) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</script> -->
 
     </div>
   </nav>
@@ -249,7 +259,15 @@
     <a href="{% url 'books' %}">📖<span>Books</span></a>
     <a href="{% url 'pyq' %}">📄<span>PYQ</span></a>
    
-   
+   <a href="{% url 'doubts' %}" class="nav-mobile-icon btn btn-ghost btn-sm">❓</a>
+    
+      {% if user.is_authenticated %}
+      <a href="{% url 'profile' %}" class="nav-mobile-icon btn btn-ghost btn-sm">👤</a>
+      {%else %}
+      <a href="{% url 'login' %}" class="nav-mobile-icon btn btn-ghost btn-sm">🔐</a>
+    {% endif %}
+
+      <button id="theme-toggle-btn" class="btn btn-ghost btn-sm" onclick="toggleTheme()" style="font-size:1.2rem; border:none; background:none; cursor:pointer; padding:0.5rem;">☀️</button>
   </nav>
 
   <main>
