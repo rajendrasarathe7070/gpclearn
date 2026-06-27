@@ -199,7 +199,7 @@ function escapeHtml(str) {
 }
 
 function initTheme() {
-  const savedTheme = localStorage.getItem('theme') || 'dark';
+  const savedTheme = localStorage.getItem('theme') || 'light';
   const stylesheet = document.getElementById('theme-stylesheet');
   if (stylesheet) {
     stylesheet.href = savedTheme === 'light'
