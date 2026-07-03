@@ -23,7 +23,8 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
-
+from core.sitemaps import StaticSitemap, DynamicFilterSitemap, DetailSitemap  # Import यहाँ करें
+from django.contrib.sitemaps.views import sitemap
 
 urlpatterns = [
 
@@ -37,8 +38,7 @@ urlpatterns = [
     # Optional combined auth page (template may not exist)
     path('auth/', TemplateView.as_view(template_name='registration/common_auth.html'), name='common_auth'),
 
-
-
+    path('sitemap.xml', sitemap, {'sitemap': sitemap}, name='sitemap'),
 
     # Main pages – all with proper names
     path('', TemplateView.as_view(template_name='index.html'), name='index'),

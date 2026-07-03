@@ -35,8 +35,9 @@ INSTALLED_APPS = [
     'core',
     'api',
     'accounts',
+    'django.contrib.sites', 
     'django.contrib.sitemaps', 
-    'django.contrib.sites',     #sitemeaps 
+        #sitemeaps 
 ]
 
 MIDDLEWARE = [

@@ -2,7 +2,7 @@ from django.urls import path
 # urls.py
 from django.contrib.sitemaps.views import sitemap
 from django.views.decorators.cache import cache_page  # Cache के लिए
-from your_app_name.sitemaps import StaticSitemap, DynamicFilterSitemap, DetailSitemap
+from core.sitemaps import StaticSitemap, DynamicFilterSitemap, DetailSitemap
 
 from .views import (
     health_check,
@@ -31,13 +31,6 @@ app_name = 'api'
 
 
 
-sitemaps = {
-    'static': StaticSitemap,
-    'filters': DynamicFilterSitemap,
-    'details': DetailSitemap,
-}
-
-
 
 urlpatterns = [
     # NOTE: Frontend expects these exact routes:
@@ -47,9 +40,7 @@ urlpatterns = [
     # These are kept explicitly to avoid accidental prefix/mount issues.
     path('health/', health_check, name='health_check'),
    
-    path('sitemap.xml', cache_page(60 * 60 * 12)(sitemap), 
-         {'sitemaps': sitemaps, 'template_name': 'sitemap.html'}, 
-         name='django.contrib.sitemaps.views.sitemap'),
+    
 
 
     # Notes
