@@ -26,6 +26,20 @@ from django.views.generic import TemplateView
 from core.sitemaps import StaticSitemap, DynamicFilterSitemap, DetailSitemap  # Import यहाँ करें
 from django.contrib.sitemaps.views import sitemap
 
+# minor/urls.py
+from django.contrib import admin
+from django.urls import path, include
+from django.contrib.sitemaps.views import sitemap
+from core.sitemaps import StaticSitemap, DynamicFilterSitemap, DetailSitemap
+
+# ✅ यह Dictionary (Variable) सबसे पहले Define होना चाहिए
+sitemaps = {
+    'static': StaticSitemap,
+    'filters': DynamicFilterSitemap,
+    'details': DetailSitemap,
+}
+
+
 urlpatterns = [
 
 
@@ -37,8 +51,12 @@ urlpatterns = [
 
     # Optional combined auth page (template may not exist)
     path('auth/', TemplateView.as_view(template_name='registration/common_auth.html'), name='common_auth'),
-
-    path('sitemap.xml', sitemap, {'sitemap': sitemap}, name='sitemap'),
+    
+    path('api/', include('api.urls')),  # आपका API
+    
+    # ✅ अब यहाँ 'sitemaps' Variable मौजूद है, Error नहीं आएगा
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
+   
 
     # Main pages – all with proper names
     path('', TemplateView.as_view(template_name='index.html'), name='index'),
