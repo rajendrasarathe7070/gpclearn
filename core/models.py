@@ -30,8 +30,8 @@ class User(AbstractUser):
 class Note(models.Model):
     title = models.CharField(max_length=200)
     subject = models.CharField(max_length=100)
-    branch = models.ForeignKey(Branch, on_delete=models.CASCADE)
-    semester = models.PositiveSmallIntegerField()
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, db_index=True)
+    semester = models.PositiveSmallIntegerField(db_index=True)
     unit = models.PositiveSmallIntegerField()
     description = models.TextField(blank=True)
     tags = models.CharField(max_length=200, blank=True)
@@ -50,8 +50,8 @@ class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=100)
     subject = models.CharField(max_length=100)
-    branch = models.ForeignKey(Branch, on_delete=models.CASCADE)
-    semester = models.PositiveSmallIntegerField()
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, db_index=True)
+    semester = models.PositiveSmallIntegerField(db_index=True)
     rating = models.PositiveSmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
     cover_gradient = models.CharField(max_length=100, default='linear-gradient(135deg,#6c63ff,#00d4ff)')
     description = models.TextField()
@@ -62,8 +62,8 @@ class Book(models.Model):
 class PYQ(models.Model):
     EXAM_TYPES = [('mid', 'Mid-Sem'), ('end', 'End-Sem'), ('back', 'Backlog')]
     subject = models.CharField(max_length=100)
-    branch = models.ForeignKey(Branch, on_delete=models.CASCADE)
-    semester = models.PositiveSmallIntegerField()
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, db_index=True)
+    semester = models.PositiveSmallIntegerField(db_index=True)
     year = models.PositiveSmallIntegerField()
     exam_type = models.CharField(max_length=10, choices=EXAM_TYPES)
     pdf_file = models.FileField(upload_to='pyqs/', null=True, blank=True)
@@ -72,8 +72,8 @@ class PYQ(models.Model):
 class Syllabus(models.Model):
     subject_name = models.CharField(max_length=100)
     subject_code = models.CharField(max_length=20)
-    branch = models.ForeignKey(Branch, on_delete=models.CASCADE)
-    semester = models.PositiveSmallIntegerField()
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, db_index=True)
+    semester = models.PositiveSmallIntegerField(db_index=True)
     units = models.JSONField(default=list)   # e.g. [{"n":1,"topic":"..."}, ...]
     pdf_file = models.FileField(upload_to='syllabi/', null=True, blank=True)
     pdf_link = models.URLField(blank=True)

@@ -10,6 +10,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-8^@2q*s@$!b$x#9m%4p1v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
+SITE_ID = 1
+
+# Security: आपका डोमेन सेट करें (ताकि हर जगह https आए)
+DEFAULT_DOMAIN = 'elearn-for-study.onrender.com'
+
 ALLOWED_HOSTS = [
     '*',
     'localhost',
@@ -30,6 +35,8 @@ INSTALLED_APPS = [
     'core',
     'api',
     'accounts',
+    'django.contrib.sitemaps', 
+    'django.contrib.sites',     #sitemeaps 
 ]
 
 MIDDLEWARE = [
@@ -148,3 +155,5 @@ USE_X_FORWARDED_HOST = False
 SECURE_PROXY_SSL_HEADER = ('HTTPS_X_FORWARDED_PROTO', 'https')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
