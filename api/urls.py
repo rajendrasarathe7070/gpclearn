@@ -32,6 +32,7 @@ urlpatterns = [
     #   /api/profile/    -> profile_data
     # These are kept explicitly to avoid accidental prefix/mount issues.
     path('health/', health_check, name='health_check'),
+    path('sitemap.xml', health_check , name='sitemap'),  # Placeholder for sitemap
 
 
     # Notes

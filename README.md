@@ -73,55 +73,7 @@ A comprehensive Django-based platform for managing and sharing educational resou
 
 ---
 
-## 🚀 Installation & Setup
-
-### 1. Clone the Repository
-```bash
-git clone <repository-url>
-cd minor
-```
-
-### 2. Create Virtual Environment
-```bash
-python -m venv venv
-
-# On Windows
-venv\Scripts\activate
-
-# On macOS/Linux
-source venv/bin/activate
-```
-
-### 3. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Database Migration
-```bash
-python manage.py migrate
-```
-
-### 5. Collect Static Files
-```bash
-python manage.py collectstatic --noinput
-```
-
-### 6. Create Superuser (Admin)
-```bash
-python manage.py createsuperuser
-```
-
-### 7. Run Development Server
-```bash
-python manage.py runserver
-```
-
-Access the application at: `http://localhost:8000`
-Admin panel: `http://localhost:8000/admin`
-
----
-
+0
 ## 📁 Project Structure
 
 ```
@@ -281,44 +233,7 @@ The application is configured to work with Cloudflare Tunnel for secure HTTPS ac
 3. Configure `config.yml`
 4. Run: `cloudflared tunnel run minor`
 
----
-
-## 🛠️ Development
-
-### Run Tests
-```bash
-python manage.py test
-```
-
-### Check Project Health
-```bash
-python manage.py check
-```
-
-### Make Database Migrations
-```bash
-python manage.py makemigrations
-python manage.py migrate
-```
-
-### Access Django Shell
-```bash
-python manage.py shell
-```
-
----
-
-## 📝 Environment Variables
-
-Create a `.env` file (not committed to git):
-```
-DEBUG=True
-SECRET_KEY=your-secret-key-here
-ALLOWED_HOSTS=localhost,127.0.0.1,your-domain.com
-```
-
----
-
+--
 ## 🤝 Contributing
 
 1. Fork the repository
