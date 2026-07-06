@@ -30,10 +30,8 @@ from django.contrib.sitemaps.views import sitemap
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.sitemaps.views import sitemap
-from core.sitemaps import StaticSitemap, DynamicFilterSitemap, DetailSitemap
-
-from django.contrib.sitemaps.views import sitemap
 from .sitemaps import StaticSitemap, DynamicFilterSitemap, DetailSitemap
+
 
 # ✅ यह Dictionary (Variable) सबसे पहले Define होना चाहिए
 sitemaps = {
