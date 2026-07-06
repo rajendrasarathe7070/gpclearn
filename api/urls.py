@@ -2,7 +2,7 @@ from django.urls import path
 # urls.py
 from django.contrib.sitemaps.views import sitemap
 from django.views.decorators.cache import cache_page  # Cache के लिए
-from core.sitemaps import StaticSitemap, DynamicFilterSitemap, DetailSitemap
+from minor.sitemaps import StaticSitemap, DynamicFilterSitemap, DetailSitemap
 
 from .views import (
     health_check,
