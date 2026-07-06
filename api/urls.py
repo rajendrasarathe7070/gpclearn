@@ -25,7 +25,7 @@ from .views import (
     update_profile,
     my_uploads,
     saved_notes,
-    sitemap,
+    
 )
 
 app_name = 'api'
