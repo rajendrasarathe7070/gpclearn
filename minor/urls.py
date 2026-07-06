@@ -32,10 +32,13 @@ from django.urls import path, include
 from django.contrib.sitemaps.views import sitemap
 from core.sitemaps import StaticSitemap, DynamicFilterSitemap, DetailSitemap
 
+from django.contrib.sitemaps.views import sitemap
+from .sitemaps import StaticSitemap, DynamicFilterSitemap, DetailSitemap
+
 # ✅ यह Dictionary (Variable) सबसे पहले Define होना चाहिए
 sitemaps = {
     'static': StaticSitemap,
-    'filters': DynamicFilterSitemap,
+    'dynamic_filters': DynamicFilterSitemap,
     'details': DetailSitemap,
 }
 
@@ -54,7 +57,6 @@ urlpatterns = [
     
     path('api/', include('api.urls')),  # आपका API
     
-    # ✅ अब यहाँ 'sitemaps' Variable मौजूद है, Error नहीं आएगा
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
    
 

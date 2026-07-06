@@ -1,7 +1,6 @@
-# api/sitemaps.py (या जो भी आपका App हो)
 from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
-from .models import Note, PYQ  # अगर Models इसी App में हैं
+from .models import Note, PYQ  # 'Note' import किया गया है
 
 class StaticSitemap(Sitemap):
     priority = 0.8
@@ -15,7 +14,8 @@ class DynamicFilterSitemap(Sitemap):
     priority = 0.6
     changefreq = 'daily'
     def items(self):
-        return Notes.objects.values('branch', 'semester').distinct().order_by('branch')
+        # Notes की जगह Note का इस्तेमाल
+        return Note.objects.values('branch', 'semester').distinct().order_by('branch')
     def location(self, item):
         return f"/notes/?branch={item['branch']}&semester={item['semester']}"
 
@@ -23,6 +23,7 @@ class DetailSitemap(Sitemap):
     priority = 0.5
     changefreq = 'monthly'
     def items(self):
-        return Notes.objects.all()[:500]
+        # Notes की जगह Note का इस्तेमाल
+        return Note.objects.all()[:500]
     def location(self, item):
         return f"/notes/{item.id}/"

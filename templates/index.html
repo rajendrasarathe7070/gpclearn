@@ -15,12 +15,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <meta name="google-site-verification" content="uX9dmJO37GXV90cpuG_sA8rXjIxSiG0dXhVFDojXx2s" />
-  <title>GPC diploma learn</title>
-  <link id="theme-stylesheet" rel="stylesheet" href="{% static 'css/style.css' %}">
   
+  <title>{% block title %}Home{% endblock %} | GPC diploma learn </title>
+  <link id="theme-stylesheet" rel="stylesheet" href="{% static 'css/style.css' %}">
+  <meta name="description" content="Engineering notes, syllabus, PYQs, and books for students. Prepare for your exams easily with gpch learn.">
 <!-- Font Awesome (icon library) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-
+<script type="application/ld+json">
+{
+  "@context" : "https://schema.org",
+  "@type" : "WebSite",
+  "name" : "gpc learn",
+  "alternateName" : "GPC diploma learn",
+  "url" : "https://elearn-for-study.onrender.com/"
+}
+</script>
 </head>
 <body>
   <div id="particles" class="particles"></div>
