@@ -1,6 +1,6 @@
 from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
-from .models import Note, PYQ  # 'Note' import किया गया है
+from core.models import Note, PYQ  # यहाँ 'minor' का इस्तेमाल करें
 
 class StaticSitemap(Sitemap):
     priority = 0.8
