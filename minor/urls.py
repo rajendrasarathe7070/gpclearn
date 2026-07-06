@@ -66,8 +66,8 @@ urlpatterns = [
     path('pyq/', TemplateView.as_view(template_name='pyq.html'), name='pyq'),
     path('doubts/', TemplateView.as_view(template_name='doubts.html'), name='doubts'),
     path('profile/', TemplateView.as_view(template_name='profile.html'), name='profile'),
-    path('search/', TemplateView.as_view(template_name='search.html'),name='Global search')
-    path('search.html', TemplateView.as_view(template_name='search.html'),name='Global search')
+    # path('search/', TemplateView.as_view(template_name='search.html'),name='Global search')
+    # path('search.html', TemplateView.as_view(template_name='search.html'),name='Global search')
 
     # Search (template already has JS-based ?q= searching)
     path('search/', TemplateView.as_view(template_name='search.html'), name='search'),
