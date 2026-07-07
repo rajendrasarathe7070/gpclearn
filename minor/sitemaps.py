@@ -2,11 +2,13 @@ from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
 from core.models import Note, PYQ  # यहाँ 'minor' का इस्तेमाल करें
 
+
+
 class StaticSitemap(Sitemap):
     priority = 0.8
     changefreq = 'weekly'
     def items(self):
-        return ['home', 'notes_list', 'syllabus', 'books', 'pyq_list', 'doubts', 'profile', 'search']
+        return ['index', 'notes', 'syllabus', 'books', 'pyq', 'doubts', 'profile', 'search']
     def location(self, item):
         return reverse(item)
 
