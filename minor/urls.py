@@ -40,8 +40,6 @@ sitemaps = {
 
 urlpatterns = [
 
-    # minor/urls.py में इसे चेक करें
-    path('', views.home_view, name='home'), # यहाँ name='home' होना अनिवार्य है
     # Admin
     path('admin/', admin.site.urls,),
 
