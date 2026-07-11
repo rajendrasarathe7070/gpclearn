@@ -79,6 +79,8 @@ urlpatterns = [
 
     # API endpoints (must be defined in api/urls.py)
     path('api/', include('api.urls')),
+
+    path('notes/<slug:slug>/', views.note_detail, name='note_detail'),
 ]
 
 # Serve media/static files.
