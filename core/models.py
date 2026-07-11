@@ -30,7 +30,7 @@ class User(AbstractUser):
 
 class Note(models.Model):
     title = models.CharField(max_length=200)
-    slug = models.SlugField(null=True, blank=True)
+    slug = models.SlugField(null=True, blank=True , unique=False)
 
     subject = models.CharField(max_length=100)
     branch = models.ForeignKey(Branch, on_delete=models.CASCADE, db_index=True)
