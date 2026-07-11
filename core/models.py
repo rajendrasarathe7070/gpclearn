@@ -30,7 +30,7 @@ class User(AbstractUser):
 
 class Note(models.Model):
     title = models.CharField(max_length=200)
-    slug = models.SlugField(unique=True, blank=True)
+    slug = models.SlugField(null=True, blank=True)
 
     subject = models.CharField(max_length=100)
     branch = models.ForeignKey(Branch, on_delete=models.CASCADE, db_index=True)
@@ -44,7 +44,7 @@ class Note(models.Model):
     uploaded_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='notes')
     uploaded_at = models.DateField(auto_now_add=True)
     download_count = models.PositiveIntegerField(default=0)
-    
+
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title) # Title ko URL-friendly banata hai
