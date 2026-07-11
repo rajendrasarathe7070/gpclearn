@@ -28,7 +28,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.sitemaps.views import sitemap
 from .sitemaps import StaticSitemap, DynamicFilterSitemap, DetailSitemap
-
+from core import views
 
 # ✅ यह Dictionary (Variable) सबसे पहले Define होना चाहिए
 sitemaps = {
