@@ -30,9 +30,6 @@ from .views import (
 
 app_name = 'api'
 
-
-
-
 urlpatterns = [
     # NOTE: Frontend expects these exact routes:
     #   /api/notes/      -> notes_list
@@ -41,9 +38,6 @@ urlpatterns = [
     # These are kept explicitly to avoid accidental prefix/mount issues.
     path('health/', health_check, name='health_check'),
    
-    
-
-
     # Notes
     path('notes/', notes_list, name='notes_list'),
     path('notes/upload/', upload_note, name='upload_note'),
